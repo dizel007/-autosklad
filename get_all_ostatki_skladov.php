@@ -191,7 +191,7 @@ echo <<<HTML
 <form action="update_all_markets.php" method="post">
 <table>
 <tr class="prods_table">
-
+    <td width="30">пп</td>
     <td width="150">артикул</td>
     <td>Oстатки<br>из 1С</td>
     <td>Oстатки<br>из 1С<br>с проданным</td>
@@ -239,8 +239,9 @@ foreach ($ozon_catalog as $mmmm3) {
 
 // print_r($arr_mp_items);
 // Формировать данные для таблицы
+$pp=0;
 foreach ($arr_mp_items as $key => $items) {
-    
+    $pp++;
     $quantity_1c = $arr_mp_items[$key];
     $quantity_1c_without_sell_tovar = $arr_mp_items_without_sell_tovar[$key];
 
@@ -330,7 +331,7 @@ $need_some_tovarov = "need_some_tovarov";
 
 echo <<<HTML
 <tr class="prods_table">
-
+    <td>$pp</td>
     <td>$key</td>
     <td class="text14">$quantity_1c</td>
     <td class="text14">$quantity_1c_without_sell_tovar</td>   
@@ -409,7 +410,7 @@ HTML;
 echo <<<HTML
 </table>
 
-<input type="submit" value="ОБНОВИТЬ ДАННЫЕ">
+<input class="btn" type="submit" value="ОБНОВИТЬ ДАННЫЕ">
 </form>
 </div>
 
