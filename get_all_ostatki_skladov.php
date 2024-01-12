@@ -259,7 +259,7 @@ foreach ($arr_mp_items as $key => $items) {
    // Проверяем текущий остаток, чтобы он был не меньше Будущего
    ($quantity_wb == 0)? $wb_css_ostatok = "zero_alarm_color": $z = 1 ; // смотрим, когда количество товара равно 0 
    ($quantity_new_wb < $quantity_wb)? $wb_css_ostatok = "alarm_color": $wb_css_ostatok = "green_color" ; // факт кол-во товара больше будущего
-   ($quantity_new_wb > $quantity_wb)? $wb_check_point = 1: $wb_check_point = 0 ; // смотрим, где штатное обновление остатков товара
+   ($quantity_new_wb <> $quantity_wb)? $wb_check_point = 1: $wb_check_point = 0 ; // смотрим, где штатное обновление остатков товара
    (!is_numeric($quantity_wb))?$wb_check_point = 999: $z=1 ; // если товара не существует, то блокируем галочку
    ($quantity_wb < 6)?$wb_css_ostatok = "orange_color":  $z = 1; // подсвечиваем, где мало товара
    ($quantity_wb =="-")?$wb_css_ostatok = "":  $z = 1; // убираем окраску, где где товар не продается
@@ -279,7 +279,7 @@ foreach ($arr_mp_items as $key => $items) {
     // Проверяем текущий остаток, чтобы он был не меньше Будущего
    ($quantity_wbip == 0)? $wbip_css_ostatok = "zero_alarm_color": $z = 1 ; // смотрим, когда количество товара равно 0 
    ($quantity_new_wbip < $quantity_wbip)? $wbip_css_ostatok = "alarm_color": $wbip_css_ostatok = "green_color" ; // факт кол-во товара больше будущего
-   ($quantity_new_wbip > $quantity_wbip)? $wbip_check_point = 1: $wbip_check_point = 0 ; // смотрим, где штатное обновление остатков товара
+   ($quantity_new_wbip <> $quantity_wbip)? $wbip_check_point = 1: $wbip_check_point = 0 ; // смотрим, где штатное обновление остатков товара
    (!is_numeric($quantity_wbip))?$wbip_check_point = 999: $z=1 ; // если товара не существует, то блокируем галочку
    ($quantity_wbip < 6)?$wbip_css_ostatok = "orange_color":  $z = 1; // подсвечиваем, где мало товара
    ($quantity_wbip =="-")?$wbip_css_ostatok = "":  $z = 1; // убираем окраску, где где товар не продается
@@ -301,7 +301,7 @@ foreach ($arr_mp_items as $key => $items) {
 // Проверяем текущий остаток, чтобы он был не меньше Будущего
    ($quantity_ozon == 0)? $ozon_css_ostatok = "zero_alarm_color": $z = 1 ; // смотрим, когда количество товара равно 0 
    ($quantity_new_ozon < $quantity_ozon)? $ozon_css_ostatok = "alarm_color": $ozon_css_ostatok = "green_color" ; // факт кол-во товара больше будущего
-   ($quantity_new_ozon > $quantity_ozon)? $ozon_check_point = 1: $ozon_check_point = 0 ; // смотрим, где штатное обновление остатков товара
+   ($quantity_new_ozon <> $quantity_ozon)? $ozon_check_point = 1: $ozon_check_point = 0 ; // смотрим, где штатное обновление остатков товара
    (!is_numeric($quantity_ozon))?$ozon_check_point = 999: $z = 1 ; // если товара не существует, то блокируем галочку
    ($quantity_ozon < 6)?$ozon_css_ostatok = "orange_color":  $z = 1; // подсвечиваем, где мало товара
    ($quantity_ozon =="-")?$ozon_css_ostatok = "":  $z = 1; // убираем окраску, где где товар не продается
